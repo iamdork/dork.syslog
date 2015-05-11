@@ -11,8 +11,4 @@
   copy:
     src: syslog.ini
     dest: /etc/supervisord.d/syslog.ini
-  register: supervisord
-
-- name: reload supervisord
-  shell: supervisorctl reload
-  when: supervisord.changed
+  notify: reload supervisor
