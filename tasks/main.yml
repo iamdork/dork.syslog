@@ -13,6 +13,11 @@
     dest: /etc/supervisord.d/syslog.ini
   register: supervisor
 
+- name: start syslog
+  supervisorctl:
+    name: syslog
+    state: started
+
 - name: reload supervisor
   supervisorctl:
     name: syslog
