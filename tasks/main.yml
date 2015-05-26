@@ -6,6 +6,10 @@
   copy:
     src: rsyslog.conf
     dest: /etc/rsyslog.conf
+- name: remove listen.conf
+  file:
+    path: /etc/rsyslog.d/listen.conf
+    state: absent
 
 - name: create supervisor config
   copy:
