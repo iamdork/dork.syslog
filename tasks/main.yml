@@ -20,10 +20,4 @@
 - name: start syslog
   supervisorctl:
     name: syslog
-    state: started
-
-- name: reload supervisor
-  supervisorctl:
-    name: syslog
-    state: restarted
-  when: supervisor.changed
+    state: present
